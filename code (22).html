@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2C2F36;
+            color: #FFF;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #36393F;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #7289DA;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .profile-image:hover {
+             border-color: #5b6e9e;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #7289DA;
+        }
+        .bio {
+            font-size: 18px;
+            margin-top: 15px;
+            line-height: 1.5;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .button-group {
+             margin-top: 25px;
+        }
+
+        .discord-logo-link, .social-icon-link {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .discord-logo-link {
+            padding: 14px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFF;
+            background: linear-gradient(to right, #5865F2, #7289DA);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .discord-logo-link:hover {
+            background: linear-gradient(to right, #4752C4, #677bc4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .social-icon-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #FFF;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .social-icon-link img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+             transition: transform 0.3s ease;
+        }
+
+         .social-icon-link.facebook {
+            background-color: #4267B2;
+         }
+         .social-icon-link.facebook img {
+              filter: invert(100%);
+         }
+
+         .social-icon-link.instagram {
+             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #ee2d6c 60%, #cb3a8e 90%);
+         }
+         .social-icon-link.instagram img {
+             filter: invert(100%);
+         }
+
+        .social-icon-link:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .gif-container {
+            margin-top: 30px;
+        }
+        .gif-container img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- รูป GIF โปรไฟล์ -->
+        <img class="profile-image" id="profileGif" src="https://animesher.com/orig/0/46/469/4693/animesher.com_shawn-frost-gif-inazuma-eleven-469372.gif" alt="Profile GIF">
+
+        <h1>NONAME</h1>
+        <!-- ข้อความ bio ที่จะทำอนิเมชั่น (เริ่มต้นให้ว่างไว้) -->
+        <p class="bio" id="animated-bio"></p>
+
+        <!-- กลุ่มของปุ่มและไอคอน Social Media -->
+        <div class="button-group">
+            <!-- ปุ่ม "LINK" -->
+            <a class="discord-logo-link" href="https://www.canva.com/design/DAGl1Tw8OUM/wwCeJQJdI4TRdtk4dDncbg/view?utm_content=DAGl1Tw8OUM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2efba25607" target="_blank">
+                LINK
+            </a>
+
+            <!-- ไอคอน Facebook -->
+            <a href="https://www.facebook.com/" target="_blank" class="social-icon-link facebook">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook Link">
+            </a>
+
+            <!-- ไอคอน Instagram -->
+             <a href="https://www.instagram.com/" target="_blank" class="social-icon-link instagram">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Link">
+             </a>
+        </div>
+         <!-- สิ้นสุดกลุ่มปุ่มและไอคอน -->
+
+        <!-- *** รูป GIF ด้านล่าง (เปลี่ยน src แล้ว) *** -->
+        <div class="gif-container">
+            <!-- URL โดยตรงของรูป GIF ใหม่ -->
+            <img src="https://www.icegif.com/wp-content/uploads/2024/04/demon-slayer-icegif-15.gif" alt="Demon Slayer GIF">
+        </div>
+         <!-- *** สิ้นสุดรูป GIF ด้านล่าง *** -->
+    </div>
+
+    <!-- JavaScript สำหรับอนิเมชั่นข้อความและเปลี่ยนรูป GIF โปรไฟล์ -->
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        // JavaScript สำหรับอนิเมชั่นข้อความ Bio
+        const bioElement = document.getElementById('animated-bio');
+        const lines = [
+          "ไม่มีอะไรให้ดู"
+        ];
+        const typeDelay = 50;
+        const lineDelay = 1000;
+        const restartDelay = 2000;
+        let currentLineIndex = 0;
+        let currentCharIndex = 0;
+
+        function typeWriter() {
+          if (currentLineIndex < lines.length) {
+            if (currentCharIndex < lines[currentLineIndex].length) {
+              bioElement.textContent += lines[currentLineIndex].charAt(currentCharIndex);
+              currentCharIndex++;
+              setTimeout(typeWriter, typeDelay);
+            } else {
+              if (currentLineIndex < lines.length - 1) {
+                bioElement.innerHTML += '<br>';
+                currentLineIndex++;
+                currentCharIndex = 0;
+                setTimeout(typeWriter, lineDelay);
+              } else {
+                setTimeout(() => {
+                  currentLineIndex = 0;
+                  currentCharIndex = 0;
+                  bioElement.innerHTML = '';
+                  typeWriter();
+                }, restartDelay);
+              }
+            }
+          }
+        }
+        typeWriter();
+
+
+        // JavaScript สำหรับเปลี่ยนรูป GIF โปรไฟล์ตอน Hover
+        const profileGif = document.getElementById('profileGif');
+        if (profileGif) {
+            const originalSrc = profileGif.src;
+            const hoverSrc = 'https://i.pinimg.com/originals/4c/3f/0b/4c3f0ba709a90708e70fe82225f08778.gif';
+
+            profileGif.addEventListener('mouseover', () => {
+                profileGif.src = hoverSrc;
+            });
+
+            profileGif.addEventListener('mouseout', () => {
+                profileGif.src = originalSrc;
+            });
+
+             profileGif.addEventListener('touchstart', (e) => {
+                 e.preventDefault();
+                 profileGif.src = hoverSrc;
+             });
+
+             profileGif.addEventListener('touchend', (e) => {
+                 e.preventDefault();
+                 setTimeout(() => {
+                     profileGif.src = originalSrc;
+                 }, 500);
+             });
+
+        } else {
+            console.error("Profile GIF element not found!");
+        }
+
+      });
+    </script>
+
+</body>
+</html>
